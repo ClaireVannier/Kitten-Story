@@ -1,0 +1,6 @@
+<div *ngFor="let kitten of kittens">
+  <p>Je suis à adopter 😻</p>
+  <img [src]="kitten.imageUrl" alt="kitten image" />
+  <p>{{ kitten.name | titlecase }}</p>
+  <button (click)="adoptKitten(kitten)">Adoptez-le 🥰</button>
+</div>

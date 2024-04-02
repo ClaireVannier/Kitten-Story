@@ -1,0 +1,5 @@
+<div *ngFor="let kitten of myKittens">
+  <p>Je suis le chaton de Claire</p>
+  <img [src]="kitten.imageUrl" alt="kitten image" />
+  <p>{{ kitten.name | titlecase}}</p>
+</div>

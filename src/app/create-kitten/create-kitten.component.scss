@@ -1,0 +1,19 @@
+h2 {
+  text-align: center;
+}
+
+form {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+
+  input {
+    width: 200px;
+  }
+
+}
