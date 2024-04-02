@@ -3,4 +3,5 @@ export interface Kitten {
   breed: string;
   birthDate: string;
   imageUrl: string;
+  showInfo: boolean;
 }

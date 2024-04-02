@@ -6,17 +6,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { Kitten } from '../models/kitten.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-kitten',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './create-kitten.component.html',
   styleUrls: ['./create-kitten.component.scss'],
 })
-
 export class AppCreateKittenComponent {
-  
   @Output() kittenCreated = new EventEmitter<Kitten>();
 
   kittenForm: FormGroup;
@@ -30,7 +29,7 @@ export class AppCreateKittenComponent {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.kittenForm.valid) {
       this.kittenCreated.emit(this.kittenForm.value);
       this.kittenForm.reset();

@@ -15,7 +15,7 @@ export class AppListKittenComponent {
   
   @Output() kittenAdopted = new EventEmitter<Kitten>();
 
-  adoptKitten(kitten: Kitten) {
+  adoptKitten(kitten: Kitten): void {
     this.kittenAdopted.emit(kitten);
   }
 }

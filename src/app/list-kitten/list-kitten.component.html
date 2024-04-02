@@ -1,6 +1,15 @@
 <div *ngFor="let kitten of kittens">
   <p>Je suis à adopter 😻</p>
-  <img [src]="kitten.imageUrl" alt="kitten image" />
-  <p>{{ kitten.name | titlecase }}</p>
+  <img
+    [src]="kitten.imageUrl"
+    alt="image du chaton"
+    (mouseover)="kitten.showInfo = true"
+    (mouseout)="kitten.showInfo = false"
+  />
+  <div *ngIf="kitten.showInfo">
+    <p>Nom: {{ kitten.name }}</p>
+    <p>Date de naissance: {{ kitten.birthDate | date : "mediumDate" }}</p>
+    <p>Race: {{ kitten.breed }}</p>
+  </div>
   <button (click)="adoptKitten(kitten)">Adoptez-le 🥰</button>
 </div>

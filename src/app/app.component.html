@@ -1,9 +1,21 @@
+<!-- Titre principal de la page -->
 <h1>Une histoire de chatons</h1>
+
+<!-- Conteneur principal pour les composants de l'application -->
 <div>
+  <!-- Composant pour créer un nouveau chaton -->
+  <!-- Lorsqu'un chaton est créé, onKittenCreated() du composant parent est appelé avec les détails du chaton créé -->
   <app-create-kitten (kittenCreated)="onKittenCreated($event)" />
+
+  <!-- Composant pour afficher la liste des chatons disponibles -->
+  <!-- La liste des chatons est passée au composant via le binding de propriété [kittens]="kittens" -->
+  <!-- Lorsqu'un chaton est adopté, onKittenAdopted() du composant parent est appelé avec les détails du chaton adopté -->
   <app-list-kitten
     [kittens]="kittens"
     (kittenAdopted)="onKittenAdopted($event)"
   />
+
+  <!-- Composant pour afficher la liste des chatons adoptés par l'utilisateur -->
+  <!-- La liste des chatons de l'utilisateur est passée au composant via le binding de propriété [myKittens]="myKittens" -->
   <app-user-kitten [myKittens]="myKittens" />
 </div>
